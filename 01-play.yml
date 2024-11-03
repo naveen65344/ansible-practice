@@ -1,7 +1,7 @@
 - name: using variables
   hosts: web
   vars_prompt:
-    name: "naveen"
+   - name: "naveen"
     prompt: "enter a name"
   tasks:
    - name: passing variables
