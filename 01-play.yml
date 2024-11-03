@@ -1,7 +1,8 @@
 - name: using variables
   hosts: web
-  vars:
-   name: naveen
+  vars_prompt:
+    name: naveen
+    prompt: "enter a name"
   tasks:
    - name: passing variables
      ansible.builtin.debug:
