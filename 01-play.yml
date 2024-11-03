@@ -1,6 +1,8 @@
----
-- name: Check connectivity to worker nodes
-  hosts: all
+- name: installing mysql if it is redhat
+  hosts: web
   tasks:
-    - name: Ping the host
-      ansible.builtin.ping:
+   - name: installing mysql if it is redhat
+     ansible.builtin.package:
+       name: mysql
+       state: present
+     when: ansible_os_family=="RedHat"   
