@@ -1,12 +1,12 @@
----
-- name: Using variables
+- name: adding user
   hosts: web
-  vars_prompt:
-    - name: "name"
-      prompt: "Enter a name"
-      private: no  # Set to yes if you want to hide the input
-
+  become: yes
   tasks:
-    - name: Passing variables
-      ansible.builtin.debug:
-        msg: "{{ name }}"
+   - name: adding user
+     ansible.builtin.command: id expense
+     register: user
+
+
+   - name: printing
+     ansible.buitlin.debug:
+       msg:"{{user}}"   
