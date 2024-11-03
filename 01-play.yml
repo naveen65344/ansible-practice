@@ -1,12 +1,9 @@
-- name: using for loop
+- name: using variables
   hosts: web
-  become: yes
-  tasks: 
-   - name:  using for
-     ansible.builtin.package:
-       name: "{{item}}"
-       state: present
-     loop:
-      - nginx
-      - mysql
-      - docker  
+  vars:
+   name: naveen
+  tasks:
+   - name: passing variables
+     ansible.builtin.debug:
+      msg: "{{name}}"
+     
