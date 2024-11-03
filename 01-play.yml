@@ -1,10 +1,12 @@
-- name: using variables
+---
+- name: Using variables
   hosts: web
   vars_prompt:
-   - name: "naveen"
-     prompt: "enter a name"
+    - name: "name"
+      prompt: "Enter a name"
+      private: no  # Set to yes if you want to hide the input
+
   tasks:
-   - name: passing variables
-     ansible.builtin.debug:
-      msg: "{{name}}"
-     
+    - name: Passing variables
+      ansible.builtin.debug:
+        msg: "{{ name }}"
