@@ -1,9 +1,11 @@
-- name: installing mysql if it is redhat
+- name: using for loop
   hosts: web
-  become: yes
-  tasks:
-   - name: installing mysql if it is redhat
+  tasks: 
+   - name:  using for
      ansible.builtin.package:
-       name: mysql
+       name: "{{item}}"
        state: present
-     when: ansible_os_family=="RedHat"   
+     loop:
+      - nginx
+      - mysql
+      - docker  
