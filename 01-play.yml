@@ -1,5 +1,6 @@
 - name: installing mysql if it is redhat
   hosts: web
+  become: yes
   tasks:
    - name: installing mysql if it is redhat
      ansible.builtin.package:
