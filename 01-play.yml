@@ -1,5 +1,6 @@
 - name: using for loop
   hosts: web
+  become: yes
   tasks: 
    - name:  using for
      ansible.builtin.package:
