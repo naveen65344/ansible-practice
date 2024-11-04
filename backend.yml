@@ -65,18 +65,16 @@
          state: present 
         loop:
         - PyMySQL
-        
         - cryptography
 
 
-      - name: Get MySQL version with non-default credentials
-        community.mysql.mysql_user:
-   
+      - name: import mysql data
+        community.mysql.mysql_db:
          login_user: root
          login_password: ExpenseApp@1
          login_host: mysql.daws83s.shop
+         target: /app/schema/backend.sql
          name: all
          state: import
-         target: /app/schema/backend.sql
         
            
