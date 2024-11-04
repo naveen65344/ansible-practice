@@ -26,3 +26,9 @@
         ansible.builtin.file:
          path: /app # Replace with your desired directory path
          state: directory    
+
+
+      - name: Download a file from a URL
+        ansible.builtin.get_url:
+         url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip # Replace with your file URL
+         dest: /app
