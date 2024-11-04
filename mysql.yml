@@ -1,0 +1,15 @@
+---
+- name: Install MySQL Server
+  hosts: your_target_hosts
+  become: yes  # Use become to gain root privileges if necessary
+  tasks:
+    - name: Install MySQL Server
+      ansible.builtin.package:
+        name: mysql-server  # Change this to 'mariadb-server' if you're using MariaDB
+        state: present
+
+    - name: Start MySQL service
+      ansible.builtin.service:
+        name: mysqld  # Change this to 'mariadb' if using MariaDB
+        state: started
+        enabled: yes
