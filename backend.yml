@@ -14,4 +14,9 @@
       - name: Install MySQL Server
         ansible.builtin.package:
          name: nodejs  # Change this to 'mariadb-server' if you're using MariaDB
-         state: present  
+         state: present 
+
+      - name: Ensure the user expense is present
+        ansible.builtin.user:
+         name: expense
+         state: present    
