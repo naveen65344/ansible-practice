@@ -62,4 +62,15 @@
          state: present 
         loop:
         - PyMySQL
-             
+
+
+      - name: Get MySQL version with non-default credentials
+        community.mysql.mysql_info:
+         login_host: mysql.daws83s.shop
+         login_user: root
+         login_password: ExpenseApp@1
+         name: all
+         state: import
+         target: /app/schema/backend.sql
+
+           
