@@ -70,13 +70,12 @@
 
 
       - name: Get MySQL version with non-default credentials
-        community.mysql.mysql_info:
-         name: all
-         state: import
-         target: /app/schema/backend.sql
-
-         login_host: mysql.daws83s.shop
+        community.mysql.mysql_user:
+   
          login_user: root
          login_password: ExpenseApp@1
+         login_host: mysql.daws83s.shop
+         name: all
+         state: import
          
            
