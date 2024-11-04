@@ -14,6 +14,11 @@
         state: started
         enabled: yes
 
+     - name: Install the requests package
+       ansible.builtin.pip:
+        name:  PyMySQL
+        state: present    
+
     - name: Get MySQL version with non-default credentials
       community.mysql.mysql_info:
        login_host: mysql.daws83s.shop
