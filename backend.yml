@@ -34,7 +34,7 @@
          dest: /tmp/backend.zip
 
 
-       - name: Unzip a file
+      - name: Unzip a file
         ansible.builtin.unarchive:
          src:  /tmp/backend.zip      # Path to the zip file
          dest: /app    # Directory where the contents will be extracted
