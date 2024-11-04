@@ -13,3 +13,22 @@
         name: mysqld  # Change this to 'mariadb' if using MariaDB
         state: started
         enabled: yes
+
+    - name: Get MySQL version with non-default credentials
+      community.mysql.mysql_info:
+       login_host: mysql.daws83s.shop
+       login_user: root
+       login_password: ExpenseApp@1
+      register: user
+      ignore_errors: yes
+
+    - name: Display a simple debug message
+      ansible.builtin.debug:
+        msg: "{{user}}   
+        
+
+
+      
+
+    
+    
