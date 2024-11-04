@@ -62,6 +62,8 @@
          state: present 
         loop:
         - PyMySQL
+        - mysql
+        - cryptography
 
 
       - name: Get MySQL version with non-default credentials
