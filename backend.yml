@@ -2,6 +2,16 @@
       hosts: backend
       become: yes  # Use become to gain root privileges if necessary
       tasks:
-      - name: Install backend Server
+      - name: disable nodejs
     
         ansible.builtin.command: dnf module disable nodejs -y
+
+      - name: enable nodejs
+    
+        ansible.builtin.command: dnf module enable nodejs:20 -y
+
+
+      - name: Install MySQL Server
+        ansible.builtin.package:
+         name: nodejs  # Change this to 'mariadb-server' if you're using MariaDB
+         state: present  
