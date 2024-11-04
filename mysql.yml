@@ -1,6 +1,6 @@
----
+
 - name: Install MySQL Server
-  hosts: your_target_hosts
+  hosts: web
   become: yes  # Use become to gain root privileges if necessary
   tasks:
     - name: Install MySQL Server
