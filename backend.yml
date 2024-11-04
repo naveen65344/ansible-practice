@@ -19,4 +19,10 @@
       - name: Ensure the user expense is present
         ansible.builtin.user:
          name: expense
-         state: present    
+         state: present   
+
+
+      - name: Ensure the directory /path/to/directory exists
+        ansible.builtin.file:
+         path: /app # Replace with your desired directory path
+         state: directory    
