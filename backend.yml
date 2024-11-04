@@ -1,0 +1,7 @@
+    - name: Install MySQL Server
+      hosts: backend
+      become: yes  # Use become to gain root privileges if necessary
+      tasks:
+      - name: Install backend Server
+    
+        ansible.builtin.command: dnf module disable nodejs -y
