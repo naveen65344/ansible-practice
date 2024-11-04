@@ -14,8 +14,8 @@
         state: started
         enabled: yes
 
-     - name: Install the requests package
-       ansible.builtin.pip:
+    - name: Install the requests package
+      ansible.builtin.pip:
         name:  PyMySQL
         state: present    
 
